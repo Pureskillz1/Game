@@ -1,0 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlaterCam : MonoBehavior
+{
+    public float sensX;
+    public float sensY;
+    
+    public Transform Orientation; 
+    
+    float xRotation;
+    float yRotation;
+    
+    
+    private void Start ()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    
+    
+    private void Update()
+    {
+    
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensy;
+        
+        yRotation += mouseX;
+        
+        xRotation += mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        
+        
+        transform.rotation = Quaternion.Eular(xRotation, yRotation,0);
+        orientation.rotation = Quaternion.Eular(0, yRoatation,0);
+        
+   }
