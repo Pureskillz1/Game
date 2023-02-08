@@ -36,3 +36,4 @@ public class PlaterCam : MonoBehavior
         orientation.rotation = Quaternion.Eular(0, yRoatation,0);
         
    }
+}
