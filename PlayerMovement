@@ -33,6 +33,10 @@ public class PlayerMovement : MonoBehavior
   public LayerMask whatIsGround;
   bool Grounded;
   
+  [Header("Slope Handling")]
+  public float maxSlopeAngle;
+  Private RayCastHit slopeHit;
+  
   public Transform orientation;
   
   float horizontalInput;
@@ -179,4 +183,10 @@ public class PlayerMovement : MonoBehavior
   private void ResetJump()
   {
     readyToJump = true;
+  }
+  
+  private bool OnSlope()
+  {
+    if()
+  }
 }
